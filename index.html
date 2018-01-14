@@ -7,6 +7,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+  <script src="main.js"></script>
   <meta charset="UTF-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -26,25 +27,37 @@
         </div>
       </div>
     </div>
-    <form class="mt-5">
+    <form class="mt-5" id="scheduleForm">
       <div class="row justify-content-md-center">
         <div class="col-lg-4">
           <div class="form-group">
             <label class="col-form-label-lg"> Pick University </label>
-            <select class="form-control">
+            <select class="form-control" id="uni" onchange="updateUni()">
               <option> University of British Columbia </option>
-              <option> Univeristy of Alberta </option>
-              <option> Univeristy of Toronto </option>
+              <option> University of Alberta </option>
+              <option> University of Toronto </option>
             </select>
           </div>
         </div>
       </div>
+      <!-- <div class="row justify-content-md-center">
+        <div class="col-lg-4">
+          <div class="form-group">
+            <label class="col-form-label-lg"> Pick Session </label>
+            <select class="form-control" id="sesh" onchange="updateSesh()">
+              <option> 17W </option>
+              <option> 18S </option>
+              <option> 18W </option>
+            </select>
+          </div>
+        </div>
+      </div> -->
       <div class="row justify-content-md-center">
         <div class="col-lg-4">
           <div class="form-group">
             <label class="col-form-label-lg"> Subject </label>
-            <select class="form-control">
-              <option> CPSC </option>
+            <select class="form-control" id="sub1" onchange="changeSubject()">
+              <option> </option>
               <option> MATH </option>
               <option> STAT </option>
             </select>
@@ -53,8 +66,8 @@
         <div class="col-lg-4">
           <div class="form-group">
             <label class="col-form-label-lg"> Course Number </label>
-            <select class="form-control">
-              <option> 100 </option>
+            <select class="form-control" id="cnum1" onchange="changeCourseNum()">
+              <option> </option>
               <option> 101 </option>
               <option> 102 </option>
               <option> 103 </option>
@@ -68,8 +81,8 @@
         <div class="col-lg-4">
           <div class="form-group">
             <label class="col-form-label-lg"> Subject </label>
-            <select class="form-control">
-              <option> CPSC </option>
+            <select class="form-control" id="sub2" onchange="changeSubject()">
+              <option> </option>
               <option> MATH </option>
               <option> STAT </option>
             </select>
@@ -78,8 +91,8 @@
         <div class="col-lg-4">
           <div class="form-group">
             <label class="col-form-label-lg"> Course Number </label>
-            <select class="form-control">
-              <option> 100 </option>
+            <select class="form-control" id="cnum2" onchange="changeCourseNum()">
+              <option> </option>
               <option> 101 </option>
               <option> 102 </option>
             </select>
@@ -90,8 +103,8 @@
         <div class="col-lg-4">
           <div class="form-group">
             <label class="col-form-label-lg"> Subject </label>
-            <select class="form-control">
-              <option> CPSC </option>
+            <select class="form-control" id="sub3" onchange="changeSubject()">
+              <option> </option>
               <option> MATH </option>
               <option> STAT </option>
             </select>
@@ -100,8 +113,8 @@
         <div class="col-lg-4">
           <div class="form-group">
             <label class="col-form-label-lg"> Course Number </label>
-            <select class="form-control">
-              <option> 100 </option>
+            <select class="form-control" id="cnum3" onchange="changeCourseNum()">
+              <option> </option>
               <option> 101 </option>
               <option> 102 </option>
             </select>
@@ -112,8 +125,8 @@
         <div class="col-lg-4">
           <div class="form-group">
             <label class="col-form-label-lg"> Subject </label>
-            <select class="form-control">
-              <option> CPSC </option>
+            <select class="form-control" id="sub4" onchange="changeSubject()">
+              <option> </option>
               <option> MATH </option>
               <option> STAT </option>
             </select>
@@ -122,8 +135,8 @@
         <div class="col-lg-4">
           <div class="form-group">
             <label class="col-form-label-lg"> Course Number </label>
-            <select class="form-control">
-              <option> 100 </option>
+            <select class="form-control" id="cnum4" onchange="changeCourseNum()">
+              <option> </option>
               <option> 101 </option>
               <option> 102 </option>
             </select>
@@ -134,8 +147,8 @@
         <div class="col-lg-4">
           <div class="form-group">
             <label class="col-form-label-lg"> Subject </label>
-            <select class="form-control">
-              <option> CPSC </option>
+            <select class="form-control" id="sub5" onchange="changeSubject()">
+              <option> </option>
               <option> MATH </option>
               <option> STAT </option>
             </select>
@@ -144,15 +157,16 @@
         <div class="col-lg-4">
           <div class="form-group">
             <label class="col-form-label-lg"> Course Number </label>
-            <select class="form-control">
-              <option> 100 </option>
+            <select class="form-control" id="cnum5" onchange="changeCourseNum()">
+              <option> </option>
               <option> 101 </option>
               <option> 102 </option>
             </select>
           </div>
         </div>
       </div>
-      <button type="submit" class="btn btn-secondary mb-4 mt-3"> Make Schedule </button>
+      <h4 class="h4" id="error-msg"> Please fill out both the subject and accompanying course number fields. </h4>
+      <button type="button" class="btn btn-secondary mb-4 mt-3" onclick="scheduleForm()"> Make Schedule </button>
     </form>
     <div class="row text-center pt-3" id="footer">
       <div class="col">

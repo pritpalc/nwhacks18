@@ -13,3 +13,7 @@
 #footer {
   height: 50px;
 }
+#error-msg {
+  color: #f00;
+  display: none;
+}
