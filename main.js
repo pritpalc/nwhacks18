@@ -15,49 +15,66 @@ function updateUni() {
   console.log(session);
 } */
 
-var subID = ["sub1", "sub2", "sub3", "sub4", "sub5"];
-var cnumID = ["cnum1", "cnum2", "cnum3", "cnum4", "cnum5"];
-
-function changeSubject() {
-  for(var i = 0; i < subID.length; i++) {
-    var element = document.getElementById(subID[i]);
-    var temp = element.options[element.selectedIndex].text;
-    subjects[i] = temp;
-    console.log(temp);
-    if (subjects[i] === " ") {
-      courseNums[i] = " ";
-      // REFRESH COURSE TO NULL
-      // document.getElementById(cnumID[i]).selectedIndex = 0;
-    }
+function changeSubject(ele) {
+  var element = document.getElementById(ele.id);
+  console.log(ele.id.substring(3,4));
+  var temp = element.options[element.selectedIndex].text;
+  subjects[parseInt(ele.id.substring(3,4)-1)] = temp;
+  console.log(temp);
+  if (subjects[parseInt(ele.id.substring(3,4)-1)] === " ") {
+    courseNums[parseInt(ele.id.substring(3,4)-1)] = " ";
+    // REFRESH COURSE TO NULL
   }
   console.log(subjects);
-  for(var i = 0; i < PREVSOMETHING; i++) {
-    var parentElement = document.getElementById("SOMETHING"); // THE COURSE NUM SELECT ELEMENT
-    var child = document.getElementById("SOMETHING"); // THE ID THAT HAS ALREADY BEEN SET
+
+  switch (ele.id.substring(3,4)) {
+    case "1":
+      updateCourses("cnum1");
+      break;
+    case "2":
+      updateCourses("cnum2");
+      break;
+    case "3":
+      updateCourses("cnum3");
+      break;
+    case "4":
+      updateCourses("cnum4");
+      break;
+    case "5":
+      updateCourses("cnum5");
+      break;
+    default:
+      break;
+  }
+}
+
+function updateCourses(id) {
+  for(var i = 0; i < PREVSOMETHING; i++) {  // THE NUMBER OF COURSES FOR THE PREV SUBJECT --> FROM DATABASE
+    var parentElement = document.getElementById(id);
+    var child = document.getElementById(id + i);
     parentElement.removeChild(child);
   }
-
-  for(var i = 0; i < SOMETHING; i++) {  // THE NUMBER OF COURSES FOR THE SUBJECT
+  for(var i = 0; i < SOMETHING; i++) {  // THE NUMBER OF COURSES FOR THE SUBJECT --> FROM DATABASE
     var parentElement = document.createElement("option");
-    var value = document.createTextNode("");  // THE COURSE NUMBER
+    var value = document.createTextNode("SOMETHING");  // THE COURSE NUMBER --> FROM DATABASE
     parentElement.appendChild(value);
-    var wrapper = document.getElementById("SOMETHING"); // THE COURSE NUM SELECT ELEMENT
+    value.id = id + i;
+    var wrapper = document.getElementById(id);
     wrapper.appendChild(parentElement);
   }
 }
 
-function changeCourseNum() {
-  for(var i = 0; i < cnumID.length; i++) {
-    var element = document.getElementById(cnumID[i]);
-    var temp = element.options[element.selectedIndex].text;
-    courseNums[i] = temp;
-    console.log(temp);
-  }
+function changeCourseNum(ele) {
+  var element = document.getElementById(ele.id);
+  console.log(ele.id.substring(4,5));
+  var temp = element.options[element.selectedIndex].text;
+  courseNums[parseInt(ele.id.substring(4,5)-1)] = temp;
+  console.log(temp);
   console.log(courseNums);
 }
 
 function scheduleForm() {
-  for (var i = 0; i < subID.length; i++) {
+  for (var i = 0; i < subjects.length; i++) {
     if (subjects[i] === " " && courseNums[i] != " " ||
         subjects[i] != " " && courseNums[i] === " ") {
       console.log(subjects);
