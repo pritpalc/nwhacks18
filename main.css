@@ -1,0 +1,15 @@
+.bg {
+  background-image: url("images/background.jpeg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.instructions, #name {
+  color: #fff;
+}
+#footer, #header {
+  background-color: #96989b;
+}
+#footer {
+  height: 50px;
+}

@@ -1,5 +1,164 @@
 <!DOCTYPE html>
 <html>
-<head> </head>
-<body> <p> Hello World </p> </body>
+<head>
+  <title> Course Planner </title>
+  <link rel="stylesheet" href="main.css" type="text/css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+  <meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+  <div class="container-fluid text-center">
+    <div class="row" id="header">
+      <div class="col">
+        <h1 class="h2 display-4" id="name"> Course Planner </h2>
+      </div>
+    </div>
+    <div class="row text-center justify-content-md-center bg">
+      <h3 class="instructions mt-5"> Instructions </h3>
+      <div class="row justify-content-md-center">
+        <div class="col-lg-6">
+          <p class="text-left instructions mb-5"> 1. Lorem ipsum dolor sit amet, duo audiam prodesset eu, per semper debitis eu. Facilisis urbanitas interpretaris te vis, graece dolorem in cum. Ea tale pertinax gloriatur est, ut rebum graece detracto sea, ex has duis quas interesset. Ut mundi dissentiunt complectitur vis, sit ne reque integre. <br> 2. Cum prompta inciderint at, nec primis abhorreant dissentias ad. Et mel ignota persecuti ullamcorper. Pri ut dictas qualisque adolescens, sed an veri legendos referrentur, iusto essent postulant mel te. Nam noster vocibus inciderint ad. Wisi vidit diceret eu eum, atqui reprimique sed ne, mei prompta iudicabit maiestatis ut. <br> 3. Ludus nemore temporibus id sea, his in assum voluptaria, per at alia nibh temporibus. Lorem fierent nec ad, te odio forensibus philosophia eum, nec id etiam vocibus ocurreret. Sea cibo erroribus cu, usu ex omnium tractatos mediocrem, eam at consul aliquam definitiones. Eu vis euripidis hendrerit gloriatur. Vel ne nihil maiorum, pro laoreet adipisci ei. Enim errem zril cum ne, prima deseruisse no ius, sit an novum expetenda. <br> 4. Eum volumus imperdiet an. Ne ius populo habemus, dolorum nusquam delicatissimi eam et. Dolorum accusata nam ei, mei vide oratio lobortis no. Agam pertinax voluptatibus eu nam, cu errem blandit similique usu. Mea virtute docendi officiis eu. In modus congue pro, lobortis posidonium voluptatibus at cum. Molestie deserunt in usu, te usu sumo vero dicunt. </p>
+        </div>
+      </div>
+    </div>
+    <form class="mt-5">
+      <div class="row justify-content-md-center">
+        <div class="col-lg-4">
+          <div class="form-group">
+            <label class="col-form-label-lg"> Pick University </label>
+            <select class="form-control">
+              <option> University of British Columbia </option>
+              <option> Univeristy of Alberta </option>
+              <option> Univeristy of Toronto </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="col-lg-4">
+          <div class="form-group">
+            <label class="col-form-label-lg"> Subject </label>
+            <select class="form-control">
+              <option> CPSC </option>
+              <option> MATH </option>
+              <option> STAT </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="form-group">
+            <label class="col-form-label-lg"> Course Number </label>
+            <select class="form-control">
+              <option> 100 </option>
+              <option> 101 </option>
+              <option> 102 </option>
+              <option> 103 </option>
+              <option> 104 </option>
+              <option> 105 </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="col-lg-4">
+          <div class="form-group">
+            <label class="col-form-label-lg"> Subject </label>
+            <select class="form-control">
+              <option> CPSC </option>
+              <option> MATH </option>
+              <option> STAT </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="form-group">
+            <label class="col-form-label-lg"> Course Number </label>
+            <select class="form-control">
+              <option> 100 </option>
+              <option> 101 </option>
+              <option> 102 </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="col-lg-4">
+          <div class="form-group">
+            <label class="col-form-label-lg"> Subject </label>
+            <select class="form-control">
+              <option> CPSC </option>
+              <option> MATH </option>
+              <option> STAT </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="form-group">
+            <label class="col-form-label-lg"> Course Number </label>
+            <select class="form-control">
+              <option> 100 </option>
+              <option> 101 </option>
+              <option> 102 </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="col-lg-4">
+          <div class="form-group">
+            <label class="col-form-label-lg"> Subject </label>
+            <select class="form-control">
+              <option> CPSC </option>
+              <option> MATH </option>
+              <option> STAT </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="form-group">
+            <label class="col-form-label-lg"> Course Number </label>
+            <select class="form-control">
+              <option> 100 </option>
+              <option> 101 </option>
+              <option> 102 </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="col-lg-4">
+          <div class="form-group">
+            <label class="col-form-label-lg"> Subject </label>
+            <select class="form-control">
+              <option> CPSC </option>
+              <option> MATH </option>
+              <option> STAT </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="form-group">
+            <label class="col-form-label-lg"> Course Number </label>
+            <select class="form-control">
+              <option> 100 </option>
+              <option> 101 </option>
+              <option> 102 </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-secondary mb-4 mt-3"> Make Schedule </button>
+    </form>
+    <div class="row text-center pt-3" id="footer">
+      <div class="col">
+        <h6> Copyright &copy; Some People. All Rights Reserved. </h6>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
