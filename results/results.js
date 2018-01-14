@@ -28,4 +28,4 @@ function createSideBar() {
 function createCalendar() {
   for(section in sections) {
   }
-}
+} 
