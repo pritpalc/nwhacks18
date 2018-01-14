@@ -1,0 +1,13 @@
+#name {
+  color: #fff;
+}
+#footer, #header {
+  background-color: #96989b;
+}
+#footer {
+  height: 50px;
+}
+#map {
+  width: 100%;
+  height: 500px;
+}

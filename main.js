@@ -87,3 +87,53 @@ function scheduleForm() {
     }
   }
 }
+
+function createSchedule() {
+  var finalSchedules = [];
+  var curSchedule = [];
+  for(a in courseOne) {
+    curSchedule = add(a, courseOne, curSchedule);
+    for(b in courseTwo) {
+      if (!(clashes(a, b))) {
+        curSchedule = add(b, courseTwo, curSchedule);
+      }
+      for(c in courseThree) {
+        if (!(clashes(a, c) || clashes(b, c))) {
+          curSchedule = add(c, courseThree, curSchedule);
+        }
+        for(d in courseFour) {
+          if (!(clashes(a, d) || clashes(b, d) || clashes(c, d))) {
+            curSchedule = add(d, courseFour, curSchedule);
+          }
+          for(e in courseFive) {
+            if (!(clashes(a, e) || clashes(b, e) || clashes(c, e) || clashes(d, e))) {
+              curSchedule = add(e, courseFive, curSchedule);
+              finalSchedules.push(curSchedule);
+              curSchedule = [];
+            }
+          }
+        }
+      }
+    }
+  }
+  return finalSchedules;
+}
+
+function add(sect, course, schedule) {
+  var newCourse = {
+    courseNum: ,
+    sectionNum: ,
+    days: ,
+    start: ,
+    finish:
+  };
+  schedule.push(newCourse);
+  return schedule;
+}
+
+function clashes(ele1, ele2) {
+  if (ele1.start >= ele2.finish || ele1.finish <= ele2.start) {
+    return false;
+  }
+  return true;
+}
